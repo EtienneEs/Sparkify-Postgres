@@ -1,0 +1,6 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_PORT=5432
+POSTGRES_DB=studentdb
+POSTGRES_USER=student
+POSTGRES_PASSWORD=WOGTQ1sRSjuJCsCZIXXeSepW5Ivszr8Uz31noVy

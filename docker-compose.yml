@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  sparkifydb:
+    build:
+      context: .
+      dockerfile: ./compose/postgres/Dockerfile
+    image:  sparkifydb
+    container_name: sparkifydb
+    env_file:
+      - ./.envs/.postgres
+    ports:
+      - "5432:5432"
+
+  jupyter_notebook:
+    build:
+      context: .
+      dockerfile: ./compose/jupyter-notebook/Dockerfile
+    image: jupyter
+    container_name: jupyter
+    volumes:
+      - type: "bind"
+        source: "./workspace"
+        target: "/home/jovyan/src"
+    env_file:
+      - ./.envs/.postgres
+    ports:
+      - "8888:8888"
